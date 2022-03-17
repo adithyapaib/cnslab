@@ -1,7 +1,7 @@
 # cnslab
 CNS LAB all Programs 
 
-## JAVA Prorgrams
+## JAVA Programs
 
 - CRC
 - DVT (Bellman Ford)
