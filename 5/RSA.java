@@ -43,7 +43,6 @@ public class RSA {
         for ( i = 0; i < msg1.length; i++) 
             pt[i] = msg1[i];
         
-
         System.out.println("Cipher Text:");
         for ( i = 0; i < msg1.length; i++) 
             System.out.print("\t" +  (ct[i] = mult(pt[i], e, n)));
