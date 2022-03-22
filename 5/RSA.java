@@ -17,7 +17,7 @@ public class RSA {
     public static void main(String[] args) {
         int pt[] = new int[100], ct[] = new int[100];
         int p, q, z, n, e, d, i;
-        String msg, ad = "";
+        String msg, plaintext = "";
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter message: ");
@@ -41,8 +41,8 @@ public class RSA {
         for (i = 0; i < msg1.length; i++) {
             pt[i] = msg1[i];
             System.out.print( (ct[i] = mult(pt[i], e, n,1)) + "\t" );
-            ad = ad + (char)(mult(ct[i], d, n,1));
+            plaintext = plaintext + (char)(mult(ct[i], d, n,1));
         }
-        System.out.println("\n\nPlain text:\t" + ad);
+        System.out.println("\n\nPlain text:\t" + plaintext);
     }
 }
