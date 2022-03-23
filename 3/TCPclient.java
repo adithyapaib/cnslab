@@ -8,22 +8,14 @@ public class TCPclient {
         Scanner s = new Scanner(System.in);
         System.out.print("Enter the file name :\t");
         String fname =  s.nextLine();
-
-        OutputStream ostream = sock.getOutputStream();
-        PrintWriter pwrite = new PrintWriter(ostream, true);
+        PrintWriter pwrite = new PrintWriter(sock.getOutputStream(), true);
         pwrite.println(fname);
-
         System.out.println("Contents of the File:");
-        InputStream istream = sock.getInputStream();
-        BufferedReader fileRead = new BufferedReader(new InputStreamReader(istream));
+        BufferedReader fileRead = new BufferedReader(new InputStreamReader(sock.getInputStream()));
         String str;
-        while ((str = fileRead.readLine()) != null) {
+        while ((str = fileRead.readLine()) != null)
             System.out.println(str);
-        }
-        
         sock.close();
-        pwrite.close();
-        fileRead.close();
     }
 
 }
