@@ -29,15 +29,11 @@ public class RSA {
             n = p * q;
         } while (!(n > 127));
 
-
-
         z = (p - 1) * (q - 1);
         for (e = 2; e < z; e++)
             if (gcd(e, z) == 1) break;
         for (d = 0; d < z; d++)
             if ((d * e) % z == 1) break;
-
-            
 
         System.out.println("\n\nPublic key: " + e + " " + n + " \nPrivate key: " + d + " " + n);
         char msg1[] = msg.toCharArray();
