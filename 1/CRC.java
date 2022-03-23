@@ -38,11 +38,9 @@ public class CRC {
         for (int i = 0; i < N; i++)
             System.out.print(g[i]);
 
-        for (i = n; i < n + N - 1; i++)
-            data[i] = 0;
         System.out.println("\n\nModified Data is : ");
         for (i = 0; i < n + N - 1; i++)
-            System.out.print(data[i]);
+            System.out.print(data[i]=(i<=n-1)?data[i]:0);
         crc();
 
         System.out.println("\n\nCRC Checksum is : ");
@@ -78,7 +76,6 @@ public class CRC {
         for (i = 0; i < N - 1; i++) {
             if (cs[i] != 0) {
                 System.out.println("\n\nERROR in ReceivedCodeword ");
-
                 System.exit(0);
             }
         }
