@@ -20,10 +20,10 @@ public class RSA {
         String msg, ad = "";
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter message: ");
+        System.out.print("Enter message: ");
         msg = sc.nextLine();
         do {
-            System.out.println("Enter p, q :(p*q >127)");
+            System.out.print("\nEnter p, q :(p*q >127) \t");
             p = sc.nextInt();
             q = sc.nextInt();
             n = p * q;
@@ -39,14 +39,14 @@ public class RSA {
 
             
 
-        System.out.println("Public key: " + e + " " + n + " \nPrivate key: " + d + " " + n);
+        System.out.println("\n\nPublic key: " + e + " " + n + " \nPrivate key: " + d + " " + n);
         char msg1[] = msg.toCharArray();
-        System.out.println("Cipher Text:");
+        System.out.print("\n\nCipher Text: \t");
         for (i = 0; i < msg1.length; i++) {
             pt[i] = msg1[i];
-            System.out.print("\t" + (ct[i] = mult(pt[i], e, n,1)));
+            System.out.print( (ct[i] = mult(pt[i], e, n,1)) + "\t" );
             ad = ad + (char)(mult(ct[i], d, n,1));
         }
-        System.out.println("\nPlain text:\n" + ad);
+        System.out.println("\n\nPlain text:\t" + ad);
     }
 }
