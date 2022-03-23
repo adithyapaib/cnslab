@@ -46,4 +46,4 @@ public class Main {
         }
         System.out.println("\nPlain text:\n" + ad);
     }
-}R
+}
