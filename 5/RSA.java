@@ -44,5 +44,6 @@ public class RSA {
             plaintext = plaintext + (char)(mult(ct[i], d, n,1));
         }
         System.out.println("\n\nPlain text:\t" + plaintext);
+        
     }
 }
