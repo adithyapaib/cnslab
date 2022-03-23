@@ -3,16 +3,9 @@
 //************************************************
 import java.util.*;
 
-<<<<<<< HEAD
 public class RSA {
     static int mult(int x, int y, int n, int k) {
         for (int  i = 0; i < y; i++) 
-=======
-public class Main {
-    static int mult(int x, int y, int n) {
-        int k = 1;
-        for (int i = 0; i < y; i++)
->>>>>>> f8f4a6c92e94d1eecb23946e6219ff88c5b2d171
             k = (k * x) % n;
         return k;
     }
@@ -35,7 +28,6 @@ public class Main {
             q = sc.nextInt();
             n = p * q;
         } while (!(n > 127));
-<<<<<<< HEAD
 
 
 
@@ -47,32 +39,14 @@ public class Main {
 
             
 
-=======
-        z = (p - 1) * (q - 1);
-
-        for (e = 2; e < z; e++)
-            if (gcd(e, z) == 1) break;
-        for (d = 0; d < z; d++)
-            if ((d * e) % z == 1) break;
-
->>>>>>> f8f4a6c92e94d1eecb23946e6219ff88c5b2d171
         System.out.println("Public key: " + e + " " + n + " \nPrivate key: " + d + " " + n);
         char msg1[] = msg.toCharArray();
         System.out.println("Cipher Text:");
         for (i = 0; i < msg1.length; i++) {
             pt[i] = msg1[i];
-<<<<<<< HEAD
             System.out.print("\t" + (ct[i] = mult(pt[i], e, n,1)));
             ad = ad + (char)(mult(ct[i], d, n,1));
         }
         System.out.println("\nPlain text:\n" + ad);
     }
 }
-=======
-            System.out.print("\t" + (ct[i] = mult(pt[i], e, n)));
-            ad = ad + (char)(pt[i] = mult(ct[i], d, n));
-        }
-        System.out.println("\nPlain text:\n" + ad);
-    }
-}
->>>>>>> f8f4a6c92e94d1eecb23946e6219ff88c5b2d171
