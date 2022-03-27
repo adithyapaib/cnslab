@@ -1,16 +1,12 @@
-
-/* TCP Conenction */
-
-/* **********SERVER************* */
 import java.net.*;
 import java.io.*;
 
-public class TCPserver {
+public class ts {
     public static void main(String args[]) throws Exception {
       
         System.out.println("Server ready for connection");
         Socket sock =  new ServerSocket(4000).accept();
-        System.out.println("Connection is successful and wating for chatting");
+        System.out.println("Connection is successful");
 
         BufferedReader fileRead = new BufferedReader(new InputStreamReader(sock.getInputStream()));
         BufferedReader contentRead = new BufferedReader(new FileReader(fileRead.readLine())); 
@@ -25,4 +21,3 @@ public class TCPserver {
         sock.close();
     }
 }
-
